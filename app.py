@@ -239,7 +239,7 @@ with center:
 
             # --- Map at bottom ---
             st.subheader("Map of Case Location:")
-            if "latitude" in selected_case and "longitude" in selected_case:
+            if pd.notnull(selected_case.get("latitude")) and pd.notnull(selected_case.get("longitude")):
                 st.map(pd.DataFrame([selected_case], columns=["latitude", "longitude"]))
         
             
