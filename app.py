@@ -238,8 +238,8 @@ with center:
                 st.write(f"**{label}:** {selected_case[col]}")
 
             # --- Map at bottom ---
-            st.subheader("Map of Case Location:")
             if pd.notnull(selected_case.get("latitude")) and pd.notnull(selected_case.get("longitude")):
+                st.subheader("Map of Case Location:")
                 st.map(pd.DataFrame([selected_case], columns=["latitude", "longitude"]))
         
             
